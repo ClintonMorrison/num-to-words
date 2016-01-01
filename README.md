@@ -1,7 +1,12 @@
 # numberToWordsJS
 ## What is this? 
 This is library provides a method for converting arbitrary integers into english text.
-For example, it would convert the number "123456" to "one hundred twenty-three thousand four hundred fifty-six"
+For example:
+```
+    -1    ->    "negative one"
+     4    ->    "four"
+123456    ->    "one hundred twenty-three thousand four hundred fifty-six"
+```
 
 All positive and negative integers are supported. Floating point numbers are rounded to integers
 before being converted to words.
