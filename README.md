@@ -6,12 +6,11 @@ For example, it would convert the number "123456" to "one hundred twenty-three t
 All positive and negative integers are supported. Floating point numbers are rounded to integers
 before being converted to words.
 
-##How to use
-Including this file in your project automatically adds a single function
-numberToWords" to the global window object. The function can be called
-directly, taking a number as a parameter.
+## How to use
+To use this library you just need to include the "numberToWords.js" file in your project. It adds a single function
+`numberToWords()` to the global `window` object. The function takes a number as a parameter and returns a string of words.
 
-##Examples
+## Examples
 ```javascript
 numberToWords(0);      // returns "zero"
 numberToWords(10001);  // returns "ten thousand one"
