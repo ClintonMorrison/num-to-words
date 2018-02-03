@@ -1,0 +1,6 @@
+--require should
+--require assert
+--require should-sinon
+--reporter spec
+--ui bdd
+--recursive

@@ -5,11 +5,7 @@
  * All positive and negative integers are supported. Floating point numbers are rounded to integers
  * before being converted to words.
  *
- * How to use:
- *    Including this file in your project automatically adds a single function
- *    "numberToWords" to the global window object. The function can be called
- *    directly, taking a number as a parameter.
- *
+ * 
  * Examples:
  *   numberToWords(0);      // returns "zero"
  *   numberToWords(10001);  // returns "ten thousand one"
@@ -17,45 +13,9 @@
  *   numberToWords(-77);    // returns "negative seventy-seven"
  *
  * @author Clinton Morrison <contact@clintonmorrison.com>
- *
- *
- * @license
- * Copyright (c) 2016 Clinton Morrison.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
  */
 
 (function () {
-
-    // Polyfill for String.prototype.trim()
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
-    if (!String.prototype.trim) {
-      String.prototype.trim = function () {
-        return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
-      };
-    }
-
-    /**
-     * Object of form number => word
-     *
-     * @type {object}
-     */
     var numberMap = {
         0: 'zero',
         1: 'one',
@@ -92,14 +52,6 @@
         1000000000000: 'trillion'
     };
 
-    /**
-     * A list of numbers contained in numberMap in descending order.
-     *
-     * This is helpful because the order of object keys (ie on the numberMap object)
-     * is not guaranteed to be preserved when iterating over the keys.
-     *
-     * @type {array}
-     */
     var numberList = [
         1000000000000,
         1000000000,
