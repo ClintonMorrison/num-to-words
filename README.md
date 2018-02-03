@@ -39,15 +39,9 @@ numToWords(-77);    // returns "negative seventy-seven"
 
 
 ## Development
-This project uses es6 and babel. You can build the project with:
-```
-npm run build
-```
+This project uses es6 and babel. You can build the project with: `npm run build`
 
-You can run the tests with:
-```
-npm run test
-```
+You can run the tests with: `npm run test`
 
 ## Roadmap
 While this library works, and is stable, it could use more features! It could potentially someday support:

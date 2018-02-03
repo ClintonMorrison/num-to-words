@@ -7,7 +7,7 @@
  * _shouldPrefixWithOne(10); // returns False
  * _shouldPrefixWithOne(100); // returns True
  *
- * @param {number] n placeholder to check
+ * @param {number} n placeholder to check
  * @returns {boolean}
  */
 export function shouldPrefixWithOne (n) {
@@ -22,7 +22,7 @@ export function shouldPrefixWithOne (n) {
  * _shouldHyphenate(10); // returns False
  * _shouldHyphenate(21); // returns True
  *
- * @param {number] n placeholder to check
+ * @param {number} n placeholder to check
  * @returns {boolean}
  */
 export function shouldHyphenate (n) {
