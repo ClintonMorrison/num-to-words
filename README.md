@@ -12,8 +12,16 @@ All positive and negative integers are supported. Floating point numbers are rou
 before being converted to words.
 
 ## How to use
-To use this library you just need to include the "numberToWords.js" file in your project. It adds a single function
-`numberToWords()` to the global `window` object. The function takes a number as a parameter and returns a string of words.
+To use this library you need to import the library in your project. For example:
+```javascript
+// es6
+import numberToWords from 'number-to-words';
+
+// require
+const numberToWords = require('number-to-words');
+```
+
+The function takes a number as a parameter and returns a string of words.
 
 ## Examples
 ```javascript
