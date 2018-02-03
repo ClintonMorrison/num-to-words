@@ -1,4 +1,4 @@
-# numberToWordsJS
+# numToWords
 ## What is this? 
 This is library provides a method for converting arbitrary integers into english text.
 For example:
@@ -12,21 +12,45 @@ All positive and negative integers are supported. Floating point numbers are rou
 before being converted to words.
 
 ## How to use
+Install this package on npm with:
+```
+npm install num-to-words
+```
+
+
 To use this library you need to import the library in your project. For example:
 ```javascript
 // es6
-import numberToWords from 'number-to-words';
+import numToWords from 'num-to-words';
 
 // require
-const numberToWords = require('number-to-words');
+const numToWords = require('num-to-words');
 ```
 
 The function takes a number as a parameter and returns a string of words.
 
 ## Examples
 ```javascript
-numberToWords(0);      // returns "zero"
-numberToWords(10001);  // returns "ten thousand one"
-numberToWords(111);    // returns "one hundred eleven"
-numberToWords(-77);    // returns "negative seventy-seven"
+numToWords(0);      // returns "zero"
+numToWords(10001);  // returns "ten thousand one"
+numToWords(111);    // returns "one hundred eleven"
+numToWords(-77);    // returns "negative seventy-seven"
 ```
+
+
+## Development
+This project uses es6 and babel. You can build the project with:
+```
+npm run build
+```
+
+You can run the tests with:
+```
+npm run test
+```
+
+## Roadmap
+While this library works, and is stable, it could use more features! It could potentially someday support:
+- writing numbers in other languages 
+- writing numbers as ordinals (e.g. "3rd" or "21st")
+- writing decimal numbers or fractions

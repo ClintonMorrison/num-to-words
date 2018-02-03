@@ -7,10 +7,10 @@
  *
  *
  * Examples:
- *   numberToWords(0);    // returns 'zero'
- *   numberToWords(10001);  // returns 'ten thousand one'
- *   numberToWords(111);  // returns 'one hundred eleven'
- *   numberToWords(-77);  // returns 'negative seventy-seven'
+ *   numToWords(0);    // returns 'zero'
+ *   numToWords(10001);  // returns 'ten thousand one'
+ *   numToWords(111);  // returns 'one hundred eleven'
+ *   numToWords(-77);  // returns 'negative seventy-seven'
  *
  * @author Clinton Morrison <contact@clintonmorrison.com>
  */
@@ -21,14 +21,14 @@ import { numbers } from './numbers';
  * Converts a number into the corresponding series of english words
  *
  * Examples:
- *  numberToWords(0);    // returns 'zero'
- *  numberToWords(10001);  // returns 'ten thousand one'
- *  numberToWords(111);  // returns 'one hundred eleven'
+ *  numToWords(0);    // returns 'zero'
+ *  numToWords(10001);  // returns 'ten thousand one'
+ *  numToWords(111);  // returns 'one hundred eleven'
  *
  * @param {number} numToConvert
  * @returns {string}
  */
-export function numberToWords (numToConvert) {
+export function numToWords (numToConvert) {
   let words = '';
   let prefixNum;
   let remainder;
@@ -72,7 +72,7 @@ export function numberToWords (numToConvert) {
   // e.g. five 'thousand'.
   prefixNum = Math.floor(numToConvert / closestSmallerNumber);
   if (prefixNum !== 1 || shouldPrefixWithOne(closestSmallerNumber)) {
-    words += numberToWords(prefixNum) + ' ';
+    words += numToWords(prefixNum) + ' ';
   }
 
   words += closestSmallerNumberText;
@@ -85,10 +85,10 @@ export function numberToWords (numToConvert) {
   }
 
   if (remainder > 0) {
-    words += numberToWords(remainder);
+    words += numToWords(remainder);
   }
 
   return words.trim();
 };
 
-export default numberToWords;
+export default numToWords;

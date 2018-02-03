@@ -1,6 +1,6 @@
-import { numberToWords } from '../src/';
+import { numToWords } from '../src/';
 
-describe('numbersToWords', function () {
+describe('numToWords', function () {
   const textForNumbers = {
     1: 'one',
     10: 'ten',
@@ -15,20 +15,20 @@ describe('numbersToWords', function () {
 
   for (const [number, text] of Object.entries(textForNumbers)) {
     it(`returns "${text}" for the number ${number}`, function () {
-      numberToWords(number).should.equal(text);
+      numToWords(number).should.equal(text);
     });
 
     it(`returns "negative ${text}" for the number -${number}`, function () {
-      numberToWords(number * -1).should.equal(`negative ${text}`);
+      numToWords(number * -1).should.equal(`negative ${text}`);
     });
   };
 
   it('returns "not a number" when given anything other than a number', function () {
-    numberToWords('test').should.equal('not a number');
-    numberToWords({}).should.equal('not a number');
-    numberToWords(true).should.equal('not a number');
-    numberToWords(false).should.equal('not a number');
-    numberToWords(null).should.equal('not a number');
-    numberToWords(undefined).should.equal('not a number');
+    numToWords('test').should.equal('not a number');
+    numToWords({}).should.equal('not a number');
+    numToWords(true).should.equal('not a number');
+    numToWords(false).should.equal('not a number');
+    numToWords(null).should.equal('not a number');
+    numToWords(undefined).should.equal('not a number');
   });
 });
