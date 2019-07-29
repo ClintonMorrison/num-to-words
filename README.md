@@ -32,8 +32,8 @@ The function takes a number as a parameter and returns a string of words.
 ## Examples
 ```javascript
 numToWords(0);      // returns "zero"
-numToWords(10001);  // returns "ten thousand and one"
-numToWords(111);    // returns "one hundred and eleven"
+numToWords(10001, true, true);  // returns "ten thousand and one"
+numToWords(111, true, true);    // returns "one hundred and eleven"
 numToWords(-77);    // returns "negative seventy-seven"
 ```
 
