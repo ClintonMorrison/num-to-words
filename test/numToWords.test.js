@@ -27,8 +27,8 @@ describe('numToWords', function () {
     1006101: 'one million, six thousand, one hundred and one',
     191232891: 'one hundred and ninety-one million, two hundred and thirty-two thousand, eight hundred and ninety-one',
     999999999: 'nine hundred and ninety-nine million, nine hundred and ninety-nine thousand, nine hundred and ninety-nine',
-    1000000001: 'one billion and one',
-    1000000000000025: 'one thousand trillion and twenty-five'
+    1000000001: 'one billion, and one',
+    1000000000000025: 'one thousand trillion, and twenty-five'
   };
 
   for (const [number, text] of Object.entries(textForNumbers)) {

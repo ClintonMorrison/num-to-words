@@ -33,3 +33,5 @@ export const numbers = [
   { number: 1, text: 'one' },
   { number: 0, text: 'zero' }
 ];
+
+export const andWord = 'and';
