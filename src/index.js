@@ -12,7 +12,7 @@
  *   numToWords(111); // returns 'one hundred eleven'
  *   numToWords(-77); // returns 'negative seventy-seven'
  *
- * @author Clinton Morrison <contact@clintonmorrison.com>, Emmanuel Guyot 
+ * @author Clinton Morrison <clintonmorrison2@gmail.com>, Emmanuel Guyot
  */
 import { shouldPrefixWithOne, shouldHyphenate } from './util';
 import { numbers, andWord } from './numbers';

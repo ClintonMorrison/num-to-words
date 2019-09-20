@@ -19,7 +19,7 @@ describe('numToWordsBritish', function () {
     271: 'two hundred and seventy-one',
     621: 'six hundred and twenty-one',
     999: 'nine hundred and ninety-nine',
-    1101:'one thousand, one hundred and one',
+    1101: 'one thousand, one hundred and one',
     1234: 'one thousand, two hundred and thirty-four',
     15016: 'fifteen thousand, and sixteen',
     112621: 'one hundred and twelve thousand, six hundred and twenty-one',
