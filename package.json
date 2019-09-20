@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emmguyot/num-to-words.git"
+    "url": "git+https://github.com/ClintonMorrison/num-to-words.git"
   },
   "keywords": [
     "numbers",
@@ -20,9 +20,9 @@
   "author": "Clinton Morrison, Emmanuel Guyot",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/emmguyot/num-to-words/issues"
+    "url": "https://github.com/ClintonMorrison/num-to-words/issues"
   },
-  "homepage": "https://github.com/emmguyot/num-to-words#readme",
+  "homepage": "https://github.com/ClintonMorrison/num-to-words#readme",
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.24.1",
