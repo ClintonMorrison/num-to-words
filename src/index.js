@@ -20,18 +20,23 @@ import { numbers, andWord } from './numbers';
 /**
  * Converts a number into the corresponding series of english words
  *
+ * Supported options:
+ *   ands (boolean): true if ands should be added
+ *   commas (boolean): true if commas should be added
+ *
  * Examples:
- *  numToWords(0);    // returns 'zero'
- *  numToWords(10001);  // returns 'ten thousand and one'
- *  numToWords(111);  // returns 'one hundred and eleven'
+ *  numToWords(0); // returns 'zero'
+ *  numToWords(10001); // returns 'ten thousand one'
+ *  numToWords(111, { ands: true });  // returns 'one hundred and eleven'
  *
  * @param {number} numToConvert
- * @param {boolean} andForBritish
- * @param {boolean} insertComma
+ * @param {object} options
  * @returns {string}
  */
-export function numToWords (numToConvert, andForBritish, insertComma) {
-  const comma = (insertComma ? ',' : '');
+export function numToWords (numToConvert, options = {}) {
+  const andForBritish = options.ands || false;
+
+  const comma = (options.commas ? ',' : '');
   const and = (andForBritish ? andWord + ' ' : '');
   let words = '';
   let prefixNum;
@@ -76,7 +81,7 @@ export function numToWords (numToConvert, andForBritish, insertComma) {
   // e.g. five 'thousand'.
   prefixNum = Math.floor(numToConvert / closestSmallerNumber);
   if (prefixNum !== 1 || shouldPrefixWithOne(closestSmallerNumber)) {
-    words += numToWords(prefixNum, andForBritish, insertComma) + ' ';
+    words += numToWords(prefixNum, options) + ' ';
   }
 
   words += closestSmallerNumberText;
@@ -95,7 +100,7 @@ export function numToWords (numToConvert, andForBritish, insertComma) {
   }
 
   if (remainder > 0) {
-    words += numToWords(remainder, andForBritish, insertComma);
+    words += numToWords(remainder, options);
   }
 
   return words.trim();

@@ -1,6 +1,6 @@
 # numToWords
 ## What is this? 
-This library provides a method for converting arbitrary integers into english/british text. 
+This library provides a method for converting arbitrary integers into English text. 
 
 For example:
 ```
@@ -38,6 +38,20 @@ numToWords(111, true, true);    // returns "one hundred and eleven"
 numToWords(-77);    // returns "negative seventy-seven"
 ```
 
+## Additional Options
+For British English a "commas" and "ands" parameters are supported. See https://www.mathsisfun.com/numbers/counting-names-1000.html
+
+```
+// "one billion, and one"
+numToWords(1000000001, { ands: true, commas: true}); 
+
+// "one billion, one"
+numToWords(1000000001, { ands: true }); 
+
+// "one billion one"
+numToWords(1000000001); 
+```
+
 
 ## Development
 This project uses es6 and babel. You can build the project with: `npm run build`
@@ -49,3 +63,5 @@ While this library works, and is stable, it could use more features! It could po
 - writing numbers in other languages 
 - writing numbers as ordinals (e.g. "3rd" or "21st")
 - writing decimal numbers or fractions
+
+Instead of "commas" and "ands" options it would ideally support passing a locale.
