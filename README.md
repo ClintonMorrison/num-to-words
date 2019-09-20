@@ -1,11 +1,11 @@
 # numToWords
 ## What is this? 
-This is library provides a method for converting arbitrary integers into english text.
+This library provides a method for converting arbitrary integers into english/british text. It's a fork from ClintonMorrison to implement the british notation with "and"
 For example:
 ```
     -1    ->    "negative one"
      4    ->    "four"
-123456    ->    "one hundred twenty-three thousand four hundred fifty-six"
+123456    ->    "one hundred and twenty-three thousand, four hundred and fifty-six"
 ```
 
 All positive and negative integers are supported. Floating point numbers are rounded to integers
@@ -32,8 +32,8 @@ The function takes a number as a parameter and returns a string of words.
 ## Examples
 ```javascript
 numToWords(0);      // returns "zero"
-numToWords(10001);  // returns "ten thousand one"
-numToWords(111);    // returns "one hundred eleven"
+numToWords(10001, true, true);  // returns "ten thousand and one"
+numToWords(111, true, true);    // returns "one hundred and eleven"
 numToWords(-77);    // returns "negative seventy-seven"
 ```
 
@@ -43,8 +43,3 @@ This project uses es6 and babel. You can build the project with: `npm run build`
 
 You can run the tests with: `npm run test`
 
-## Roadmap
-While this library works, and is stable, it could use more features! It could potentially someday support:
-- writing numbers in other languages 
-- writing numbers as ordinals (e.g. "3rd" or "21st")
-- writing decimal numbers or fractions

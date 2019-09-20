@@ -1,6 +1,6 @@
 /**
- * This is library provides a method for converting arbitrary integers into english text.
- * For example, it would convert the number '123456' to 'one hundred twenty-three thousand four hundred fifty-six'
+ * This library provides a method for converting arbitrary integers into english/british text.
+ * For example, it would convert the number '123456' to 'one hundred and twenty-three thousand, four hundred and fifty-six'
  *
  * All positive and negative integers are supported. Floating point numbers are rounded to integers
  * before being converted to words.
@@ -8,27 +8,31 @@
  *
  * Examples:
  *   numToWords(0);    // returns 'zero'
- *   numToWords(10001);  // returns 'ten thousand one'
- *   numToWords(111);  // returns 'one hundred eleven'
+ *   numToWords(10001);  // returns 'ten thousand and one'
+ *   numToWords(111);  // returns 'one hundred and eleven'
  *   numToWords(-77);  // returns 'negative seventy-seven'
  *
- * @author Clinton Morrison <contact@clintonmorrison.com>
+ * @author Clinton Morrison <contact@clintonmorrison.com>, Emmanuel Guyot 
  */
 import { shouldPrefixWithOne, shouldHyphenate } from './util';
-import { numbers } from './numbers';
+import { numbers, andWord } from './numbers';
 
 /**
  * Converts a number into the corresponding series of english words
  *
  * Examples:
  *  numToWords(0);    // returns 'zero'
- *  numToWords(10001);  // returns 'ten thousand one'
- *  numToWords(111);  // returns 'one hundred eleven'
+ *  numToWords(10001);  // returns 'ten thousand and one'
+ *  numToWords(111);  // returns 'one hundred and eleven'
  *
  * @param {number} numToConvert
+ * @param {boolean} andForBritish
+ * @param {boolean} insertComma
  * @returns {string}
  */
-export function numToWords (numToConvert) {
+export function numToWords (numToConvert, andForBritish, insertComma) {
+  const comma = (insertComma ? ',' : '');
+  const and = (andForBritish ? andWord + ' ' : '');
   let words = '';
   let prefixNum;
   let remainder;
@@ -72,7 +76,7 @@ export function numToWords (numToConvert) {
   // e.g. five 'thousand'.
   prefixNum = Math.floor(numToConvert / closestSmallerNumber);
   if (prefixNum !== 1 || shouldPrefixWithOne(closestSmallerNumber)) {
-    words += numToWords(prefixNum) + ' ';
+    words += numToWords(prefixNum, andForBritish, insertComma) + ' ';
   }
 
   words += closestSmallerNumberText;
@@ -80,12 +84,18 @@ export function numToWords (numToConvert) {
   remainder = numToConvert - prefixNum * closestSmallerNumber;
   if (remainder > 0 && shouldHyphenate(closestSmallerNumber)) {
     words += '-';
+  } else if ((closestSmallerNumber >= 1000) && (remainder > 0) && (remainder < 100)) {
+    words +=  comma + ' ' + and;
+  } else if ((closestSmallerNumber >= 1000) && (remainder > 0)) {
+    words += comma + ' ';
+  } else if ((closestSmallerNumber === 100) && (remainder > 0)) {
+    words += ' ' + and;
   } else {
     words += ' ';
   }
 
   if (remainder > 0) {
-    words += numToWords(remainder);
+      words += numToWords(remainder, andForBritish, insertComma);
   }
 
   return words.trim();
