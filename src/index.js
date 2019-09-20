@@ -7,10 +7,10 @@
  *
  *
  * Examples:
- *   numToWords(0);    // returns 'zero'
- *   numToWords(10001);  // returns 'ten thousand and one'
- *   numToWords(111);  // returns 'one hundred and eleven'
- *   numToWords(-77);  // returns 'negative seventy-seven'
+ *   numToWords(0); // returns 'zero'
+ *   numToWords(10001); // returns 'ten thousand one'
+ *   numToWords(111); // returns 'one hundred eleven'
+ *   numToWords(-77); // returns 'negative seventy-seven'
  *
  * @author Clinton Morrison <contact@clintonmorrison.com>, Emmanuel Guyot 
  */
@@ -85,7 +85,7 @@ export function numToWords (numToConvert, andForBritish, insertComma) {
   if (remainder > 0 && shouldHyphenate(closestSmallerNumber)) {
     words += '-';
   } else if ((closestSmallerNumber >= 1000) && (remainder > 0) && (remainder < 100)) {
-    words +=  comma + ' ' + and;
+    words += comma + ' ' + and;
   } else if ((closestSmallerNumber >= 1000) && (remainder > 0)) {
     words += comma + ' ';
   } else if ((closestSmallerNumber === 100) && (remainder > 0)) {
@@ -95,7 +95,7 @@ export function numToWords (numToConvert, andForBritish, insertComma) {
   }
 
   if (remainder > 0) {
-      words += numToWords(remainder, andForBritish, insertComma);
+    words += numToWords(remainder, andForBritish, insertComma);
   }
 
   return words.trim();
